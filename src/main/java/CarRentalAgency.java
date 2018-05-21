@@ -7,22 +7,13 @@ class CarRentalAgency {
   private HashMap<String, Car> cars = new HashMap<String, Car>();
   private HashMap<Integer, RentalAgreement> rentalAgreements = 
       new HashMap<Integer, RentalAgreement>();
-  private int lastId = initLastId();
-
-  public int initLastId() {
-    if (this.rentalAgreements == null) {
-      return 1;
-    } else {
-      return this.lastId;
-    }
-  }
+  private int lastId = 1;
 
   /**
    * Methode um eine Person hinzuzufügen.
    * 
    * @param name der name der Person
    * @param drivingLicence Fahrerlaubnis der Person als String
-   * @return boolean zeigt an ob die Person hinzugefügt wurde
    */
   public boolean addPerson(final String name, final String drivingLicence) {
     if (this.persons.containsKey(name)) {
